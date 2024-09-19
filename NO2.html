@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>¿Enserio no me amas?</title>
+    <style>
+        /* Estilos básicos para centrar contenido */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Contenedor principal centrado */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para los botones */
+        .button-container {
+            position: relative;
+            width: 100%;
+            height: 200px; /* Ajusta la altura según lo necesario */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        /* Para que el botón NO se mantenga dentro de la pantalla */
+        .movable-button {
+            position: absolute;
+        }
+
+        .tenor-gif-embed {
+            margin-bottom: 20px; /* Margen entre la imagen y el texto */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="17946883" data-share-method="host" data-aspect-ratio="1.23552" data-width="30%">
+            <a href="https://tenor.com/view/mochi-mochi-peach-cat-tap-butt-cute-butt-taps-back-pats-gif-17946883">Mochi Mochi Peach Cat Tap Butt Sticker</a> 
+            from <a href="https://tenor.com/search/mochi+mochi+peach+cat-stickers">Mochi Mochi Peach Cat Stickers</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <h1>Vamos a salir por las buenas o por las malas, ¿Entendido? 😊</h1>
+
+        <div class="button-container">
+            <button onclick="location.href='Sii.html'">SI</button>
+
+            <!-- Botón que se moverá -->
+            <button id="button-no" class="movable-button">NO</button>
+        </div>
+    </div>
+
+    <script>
+        // Seleccionamos el botón NO
+        const buttonNo = document.getElementById('button-no');
+        const container = document.querySelector('.button-container');
+
+        // Función para mover el botón a una posición aleatoria dentro del contenedor
+        function moveButton() {
+            const containerWidth = container.offsetWidth;
+            const containerHeight = container.offsetHeight;
+
+            // Calculamos posiciones aleatorias dentro de los límites del contenedor
+            const newX = Math.random() * (containerWidth - buttonNo.offsetWidth);
+            const newY = Math.random() * (containerHeight - buttonNo.offsetHeight);
+
+            // Aplicamos las nuevas posiciones
+            buttonNo.style.left = `${newX}px`;
+            buttonNo.style.top = `${newY}px`;
+        }
+
+        // Añadimos un evento para mover el botón cada vez que el mouse se acerque
+        buttonNo.addEventListener('mouseover', moveButton);
+    </script>
+</body>
+
+</html>
